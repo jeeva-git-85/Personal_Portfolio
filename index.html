@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta and Tailwind Config -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Tailwind Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Dark Mode Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+  <style>
+    @keyframes slide-down {
+      0% {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translate(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slide-left {
+      0% {
+        transform: translatex(-100px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translate(0);
+        opacity: 1;
+      }
+    }
+
+    .animate-slide-left {
+      animation: slide-left 0.6s ease-out forwards;
+    }
+
+    .animate-slide-down {
+      animation: slide-down 0.6s ease-out forwards;
+    }
+
+    .water-hover {
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .water-hover::before {
+      content: " ";
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: aqua;
+      transition: bottom 0.3s ease;
+      z-index: -1
+    }
+
+    .water-hover:hover::before {
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body class=" dark:bg-black transition-colors duration-300">
+
+  <!-- Header/Navbar -->
+  <header class="bg-transparent dark:bg-gray-800 shadow fixed top-0 w-full z-50">
+
+    <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center ">
+      <h1 class="text-blue-400 font-semibold"> jeeva</h1>
+      <div class="flex items-center space-x-4 animate-slide-down">
+        <a href="#home" class="text-gray-800 dark:text-white dark:hover:text-blue-300 hover:text-blue-500">Home</a>
+        <a href="#about" class="text-gray-800 dark:text-white dark:hover:text-blue-300 hover:text-blue-500">About</a>
+        <a href="#skills" class="text-gray-800 dark:text-white dark:hover:text-blue-300 hover:text-blue-500">Skills</a>
+        <a href="#projects"
+          class="text-gray-800 dark:text-white dark:hover:text-blue-300 hover:text-blue-500">Projects</a>
+        <a href="#contact"
+          class="text-gray-800 dark:text-white dark:hover:text-blue-300 hover:text-blue-500">Contact</a>
+      </div>
+      <button id="darkToggle"
+        class="ml-4 px-3 py-1 bg-gray-200 text-black rounded hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 transition ">
+        🌙
+      </button>
+    </nav>
+
+
+
+  </header>
+  <!-- Hero Section -->
+  <section id="home">
+    <div
+      class="w-[calc(100vw-100px)] h-screen mx-auto px-4 py-20 flex flex-col items-center justify-center text-center bg-gray-800 rounded-2xl mt-20">
+      <div
+        class="flex flex-col items-center justify-center space-y-4  h-60 animate-slide-down transition-transform duration-500">
+        <h1 class="text-white font-bold"> Hey there<br>i'm jeeva</h1>
+        <p>im a full stack develper blending creativity and logic to build digital spaces<br>where everydetail counts
+        </p>
+        <img src="/pics/20240913_120749.jpg"
+          class="rounded-full w-48 h-48 object-cover shadow-lg mt-9 transition-transform duration-500 hover:scale-110 hover:shadow-[0_0_25px_rgba(255,255,255,0.5)]">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div
+      class="w-[calc(100vw-100px)] h-screen mx-auto px4 py-20 flex flex-col items-center justify-center text-left bg-gray-800 rounded-2xl mt-20">
+      <h1 class="text-cyan-300 font-bold text-3xl">About</h1>
+      <p>i'm a passionate Fullstack developer who loves blending <br>creativity with logic to build seamless digital
+        experience</p>
+      <p> i specialize in html, css and javscript</p>
+      <p>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-github"></i>
+        <i class="fa-solid fa-envelope"></i>
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div
+      class="w-[calc(100vw-100px)] h-screen mx-auto px4 py-20 flex flex-col items-center justify-center text- bg-gray-800 rounded-2xl mt-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 overflow-auto">
+        <div class="justify-center bg-sky-300 p rounded-lg   water-hover">
+          <h3><i class="fa-solid fa-lightbulb"></i>SOFT SKILLS</h3>
+          <ul class=" flex flex-col items-center justify-center ">
+            <li> <i class="fa-solid fa-globe"></i>web design</li>
+            <li> <i class="fa-solid fa-laptop-code"></i>frond -end- coding</li>
+            <li> <i class="fa-solid fa-code"></i> problem-solving</li>
+            </li>
+          </ul>
+        </div>
+        <div class="  bg-sky-300   p-4 rounded-lg water-hover">
+          <ul class=" flex flex-col items-center justify-center">
+            <li><i class="fa-solid fa-c"></i>++</li>
+            <li><i class="fa-brands fa-java"></i>java</li>
+            <li><i class="fa-brands fa-html5"></i>html</li>
+            <li><i class="fa-brands fa-css"></i>css</li>
+            <li><i class="fa-brands fa-js"></i>JavaScript</li>
+          </ul>
+        </div>
+        <div class="  bg-sky-300  p-4 rounded-lg water-hover">
+          <h3><i class="fa-solid fa-book-open"></i>EDUCATION</h3>
+          <ul class="flex-col items-center justify-center">
+            <li >
+              BACHELOR'S IN COMPUTER APPLICATIONS<br>
+              <P>Mar Augusthinose College Ramapuram</P><br>
+              <p>2022-2025</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div
+      class="w-[calc(100vw-100px)] h-screen mx-auto px4 py-20 overflow-auto bg-gray-800 rounded-2xl mt-5">
+      <div class="flex flex-wrap justify-center gap-6">
+        <div class="max-w-80 bg-black rounded-xl  shadow-lg">
+          <img src="/pics/agodap.png" alt="Project 1" class="w-full h-full object-cover" />
+          <div>
+            <h1 class="text-white font-bold text-xl">Agoda clone</h1>
+            <p class="text-gray-400">A  ui clone project of agoda webapplication</p>
+          </div>
+        </div>
+        
+        
+        <div class="max-w-80 bg-black rounded-xl  shadow-lg">
+          <img src="/pics/Screenshot (132).png" alt="Project 1" class="w-full h-full object-cover" />
+          <div>
+            <h1 class="text-white font-bold text-xl">Mobile-shop management system</h1>
+            <p class="text-gray-400">A sotware system  for mobile shop owners keep track of their shop </p>
+          </div>
+        </div>
+        
+          <div class="max-w-80 bg-black rounded-xl  shadow-lg">
+          <img src="/pics/zoo.jpeg" alt="Project 1" class="w-full h-full object-cover" />
+          <div>
+            <h1 class="text-white font-bold text-xl">zoomanagement system</h1>
+            <p class="text-gray-400">A zoomanagement system is a software system that will helpul for the zoo operations</p>
+          </div>
+        </div>
+        
+    
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div
+      class="w-[calc(100vw-100px)] h-screen mx-auto px-4 py-20 flex flex-col items-center justify-content text-center bg-gray-800 rounded-2xl mt-20">
+
+        
+      <div class="w-full max-w-md overflow-auto">
+        <h2 class="text-2xl font-bold text-white mb-6">Contact Me</h2>
+        <form  class="space-y-4">
+          <input type="text" id="name" name="name" placeholder="Your Name"
+            class="w-full px-4 py-2 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="email" id="email" name="email" placeholder="Your Email"
+            class="w-full px-4 py-2 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <textarea name="message" id="message" rows="4" placeholder="Your Message"
+            class="w-full px-4 py-2 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          <button type="submit"
+            class="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors" onclick="sendmail(event)">Send
+            Message</button>
+        </form>
+      </div>
+      <p class="self-start mt-10">lets connect!  i'm exited to hear from you and explore how we can work together!</p>
+      
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+
+  </footer>
+
+  <!-- JavaScript for Dark Mode Toggle -->
+  <script>
+    <!-- Dark Mode Toggle Script -->
+    window.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('darkToggle');
+      const htmlEl = document.documentElement;
+
+      // Load saved theme
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'dark') {
+        htmlEl.classList.add('dark');
+      }
+
+      // Toggle on button click
+      toggleBtn.addEventListener('click', () => {
+        htmlEl.classList.toggle('dark');
+        if (htmlEl.classList.contains('dark')) {
+          localStorage.setItem('theme', 'dark');
+        } else {
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    });
+  </script>
+  <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+emailjs.init({
+  publicKey: "ijnvnC35DFkPOCmbM",
+});
+})();
+</script>
+
+<script>
+function sendmail() {
+  var params = {
+    name: document.getElementById("name").value ,
+    email: document.getElementById("email").value ,
+    message: document.getElementById("message").value ,
+  };
+
+const  serviceID ="service_qcgj8tp";
+const templateID ="template_z4p6y1p";
+
+emailjs.send(serviceID, templateID, params).then((res) => {
+  document.getElementById("name").value ="";
+  document.getElementById("email").value ="";
+    document.getElementById("message").value = "";
+    console.log(res);
+    alert("your message sent suuccessfully");
+})
+.catch((err) => console.log(err));
+}
+</script>
+
+</body>
+
+</html>
